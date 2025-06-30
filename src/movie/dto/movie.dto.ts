@@ -11,18 +11,18 @@ import {
 export class MovieDto {
   @IsString()
   @IsNotEmpty()
-  title: string;
+  title!: string;
 
   @IsInt()
   @IsNotEmpty()
   @Min(1888)
   @Max(new Date().getFullYear())
-  releaseYear: number;
+  releaseYear!: number;
 
   @IsArray()
   @IsUUID('4', { each: true })
-  actorIds: string[];
+  actorIds!: string[];
 
   @IsString()
-  imageUrl: string;
+  imageUrl!: string;
 }

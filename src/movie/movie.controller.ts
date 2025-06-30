@@ -1,13 +1,13 @@
 import {
-  Body,
   Controller,
-  Delete,
   Get,
-  Param,
-  Patch,
   Post,
+  Body,
+  Param,
   Put,
+  Delete,
 } from '@nestjs/common';
+
 import { MovieDto } from './dto/movie.dto';
 import { MovieService } from './movie.service';
 
@@ -33,11 +33,6 @@ export class MovieController {
   @Put(':id')
   update(@Param('id') id: string, @Body() dto: MovieDto) {
     return this.movieService.update(id, dto);
-  }
-
-  @Patch(':id')
-  patch(@Param('id') id: string, @Body() dto: Partial<MovieDto>) {
-    return this.movieService.patch(id, dto);
   }
 
   @Delete(':id')
