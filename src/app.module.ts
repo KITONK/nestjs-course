@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 import { AppController } from './app.controller';
 import { PrismaModule } from './prisma/prisma.module';
-import { MovieModule } from './movie/movie.module';
 
 @Module({
   imports: [
@@ -12,7 +12,7 @@ import { MovieModule } from './movie/movie.module';
       isGlobal: true,
     }),
     PrismaModule,
-    MovieModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
